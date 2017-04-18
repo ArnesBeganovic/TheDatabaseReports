@@ -62,7 +62,7 @@ namespace TheDatabase
                     ulazniRed.VCC = rdr["VCC"].ToString();
                     ulazniRed.ADNT = rdr["JCI"].ToString();
                     ulazniRed.Description = rdr["Description"].ToString();
-
+                    ulazniRed.Plant = rdr["Plant"].ToString();
                     if (colsSend >= 1)
                     {
                         ulazniRed.QuantM1 = rdr["QuantM1"].ToString();

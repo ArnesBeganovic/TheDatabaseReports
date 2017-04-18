@@ -167,6 +167,8 @@
                 <asp:BoundField DataField="QuantM6" HeaderText="Quantity" Visible="False" />
                 <asp:BoundField DataField="VehM6" HeaderText="Vehicles" Visible="False" />
 
+                <asp:BoundField DataField="Plant" HeaderText="Plant" />
+
             </Columns>
             <FooterStyle BackColor="#F7DFB5" ForeColor="#8C4510" />
             <HeaderStyle BackColor="#A55129" Font-Bold="True" ForeColor="White" />

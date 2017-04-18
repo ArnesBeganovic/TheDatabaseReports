@@ -12,7 +12,7 @@ namespace TheDatabase
         protected void Page_Load(object sender, EventArgs e)
         {
             //Prepare sql command
-            string sqlKomanda = "Select case when VehicleName is null then Vehicle else VehicleName end as VehicleName, VCC,JCI,Description,";
+            string sqlKomanda = "Select case when VehicleName is null then Vehicle else VehicleName end as VehicleName, VCC,JCI,Description,Plant,";
             int colsSend = 0;
 
             //Based on selected month, prepare sql columns to be returned
@@ -79,10 +79,10 @@ namespace TheDatabase
             // Set white color as the background color for gridview header row 
             GridView1.HeaderRow.Style.Add("background-color", "#FFFFFF");
 
-            foreach (TableCell tableCell in GridView1.Rows[0].Cells) {
+            foreach (TableCell tableCell in GridView1.HeaderRow.Cells) {
                 tableCell.Style["background-color"] = "#A55129";
             }
-            /*
+            
             // Set background color of each cell of each data row of GridView1 
             foreach (GridViewRow gridViewRow in GridView1.Rows) {
                 gridViewRow.BackColor = System.Drawing.Color.White;
@@ -90,7 +90,6 @@ namespace TheDatabase
                     gridViewRowTableCell.Style["background-color"] = "#FFF7E7";
                 }
             }
-            */
             GridView1.RenderControl(htw);
             Response.Write(stringWriter.ToString());
             Response.End();
@@ -199,6 +198,10 @@ namespace TheDatabase
                     HeaderGridRow.Cells.Add(HeaderCell);
                 }
 
+                //Add empty cell for plant
+                HeaderCell = new TableCell();
+                HeaderCell.Text = "";
+                HeaderGridRow.Cells.Add(HeaderCell);
                 //Add extra cells in header extra row
                 GridView1.Controls[0].Controls.AddAt(0, HeaderGridRow);
             }
